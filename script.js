@@ -53,6 +53,28 @@ generateBtn.addEventListener('click', function () {
     );
     console.log(`this is the length ${lengthPass}`);
     //  return lengthPass;
+    //-create a separate list for lc, up, numbers and special characters
+    //-letters, if true, ask upper or lower, else skip
+    //-numbers? true/false
+    //-special charcters? true/false
+  }
+  var numberPrompt = window.confirm(
+    'Do you want to include numbers in your password?'
+  );
+  if (numberPrompt == true) {
+    console.log('yes to numbser');
+  }
+  var charPrompt = window.confirm(
+    'Do you want to include special characters in your password?'
+  );
+  if (charPrompt == true) {
+    console.log('yes to characters');
+  }
+  var alphaPrompt = window.confirm(
+    'Do you want to include letters in your password?'
+  );
+  if (alphaPrompt == true) {
+    console.log('yes to alphabet');
   }
 });
 
