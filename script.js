@@ -15,33 +15,44 @@ var randomString = function () {
 console.log(randomString());
 
 //SECTION Random Numbers
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-console.log(randomNum);
+var randomNums = function () {
+  var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+  return randomNum;
+};
+console.log(randomNums());
 
 //SECTION Random Characters
-var charList = '!#$%&()*+,-./:;<=>?@[]^_`{|}~';
-var randomChar = charList[Math.floor(Math.random() * charList.length)];
-console.log(randomChar);
+var randomChars = function () {
+  var charList = '!#$%&()*+,-./:;<=>?@[]^_`{|}~';
+  var randomChar = charList[Math.floor(Math.random() * charList.length)];
+  return randomChar;
+};
+console.log(randomChars());
 
 //IMPORTANT ORIGINAL CODE ------------------
-// the writePassword() function generates a password using the generatePassword() function, selects the HTML element with the ID password, and updates its value with the generated password.
-function writePassword() {
-  // var password will store random password created by generatePassword
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
-}
-writePassword();
-console.log(writePassword);
+// // the writePassword() function generates a password using the generatePassword() function, selects the HTML element with the ID password, and updates its value with the generated password.
+// function writePassword() {
+//   // var password will store random password created by generatePassword
+//   var password = generatePassword();
+//   var passwordText = document.querySelector('#password');
+//   passwordText.value = password;
+// }
+// writePassword();
+// console.log(writePassword);
+//IMPORTANT ORIGINAL CODE ------
 // Add event listener to generate button
 // generateBtn.addEventListener('click', writePassword);
 //replace function() with writePassword function
 generateBtn.addEventListener('click', function () {
   var start = window.confirm('Do you want a new Password?');
+
   if (start == true) {
-    window.prompt('How long should your password be? Must be at least 8');
+    var lengthPass = window.prompt(
+      'How long should your password be? Must be at least 8 but no more than 128 characters long'
+    );
+    console.log(`this is the length ${lengthPass}`);
+    //  return lengthPass;
   }
 });
 
