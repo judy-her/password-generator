@@ -22,6 +22,12 @@ var numberPrompt = window.confirm(
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 //Add empty array to store random numbers
 var randomNums = []; //this holds array of numbers selected
+//genrerate random numbers and push into array
+for (var i = 0; i < lengthPass; i++) {
+  var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+  randomNums.push(randomNum);
+}
+console.log(`Random numbers array`, randomNums);
 
 //SECTION Random Numbers
 var randomNums = function () {

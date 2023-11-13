@@ -23,19 +23,19 @@ for (var i = 0; i < lengthPass; i++) {
   var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
   randomNums.push(randomNum);
 }
-// console.log(`Random numbers array`, randomNums);
+console.log(`Random numbers array`, randomNums.join(''));
 
-var generatePassword = function () {
-  if (numberPrompt == true) {
-    console.log(`${randomNums} are the numbers in password`);
-  } else {
-    console.log('no numbers');
-  }
+// var generatePassword = function () {
+//   if (numberPrompt == true) {
+//     console.log(`${randomNums} are the numbers in password`);
+//   } else {
+//     console.log('no numbers');
+//   }
 
-  //   for (i = 0; i <= lengthPass.length; i++) {
-  //     if (numberPrompt == true) {
-  //       console.log('this person wants these numbers');
-  //     }
-  //   }
-};
-generatePassword();
+//   for (i = 0; i <= lengthPass.length; i++) {
+//     if (numberPrompt == true) {
+//       console.log('this person wants these numbers');
+//     }
+//   }
+// };
+// generatePassword();
