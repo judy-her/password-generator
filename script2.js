@@ -25,17 +25,42 @@ for (var i = 0; i < lengthPass; i++) {
 }
 console.log(`Random numbers array`, randomNums.join(''));
 
-// var generatePassword = function () {
-//   if (numberPrompt == true) {
-//     console.log(`${randomNums} are the numbers in password`);
-//   } else {
-//     console.log('no numbers');
-//   }
+//characters------------------------
+var charPrompt = window.confirm(
+  'Do you want to include special characters in your password?'
+);
 
-//   for (i = 0; i <= lengthPass.length; i++) {
-//     if (numberPrompt == true) {
-//       console.log('this person wants these numbers');
-//     }
-//   }
-// };
-// generatePassword();
+var charList = '!#$%&()*+-/:;<=>?@[]^_{|}~';
+//this holds strings of characters selected
+var randomCharString = '';
+// Generate random characters and append them to the password string
+for (var i = 0; i < lengthPass; i++) {
+  var randomChar = charList[Math.floor(Math.random() * charList.length)];
+  randomCharString += randomChar;
+}
+
+console.log(`Random Characters string:`, randomCharString);
+
+var generatePassword = function () {
+  if (numberPrompt == true) {
+    console.log(`These are the final random numbers${randomNums} `);
+  } else {
+    console.log('no numbers');
+  }
+  if (charPrompt == true) {
+    console.log(`These are the final random characters ${randomCharString}`);
+  } else {
+    console.log('no characters');
+  }
+};
+
+generatePassword();
+
+//genrerate random numbers and push into string
+
+//geerate random numbers and push intoarray
+// for (var i = 0; i < lengthPass; i++) {
+//   var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+//   randomNums.push(randomNum);
+// }
+// console.log(`Random numbers array`, randomNums.join(''));

@@ -5,7 +5,7 @@ console.log('I am linked');
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-//SECTION Make sure password length is correct
+//SECTION----password length is correct----------------
 var lengthPass = window.prompt(
   'How long should your password be? Must be at least 8 but no more than 128 characters long'
 );
@@ -18,7 +18,7 @@ if (isNaN(lengthPass) || lengthPass < 8 || lengthPass > 128) {
 var numberPrompt = window.confirm(
   'Do you want to include numbers in your password?'
 );
-
+//SECTION-------number---------------------------------
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 //Add empty array to store random numbers
 var randomNums = []; //this holds array of numbers selected
@@ -29,21 +29,38 @@ for (var i = 0; i < lengthPass; i++) {
 }
 console.log(`Random numbers array`, randomNums);
 
-//SECTION Random Numbers
-var randomNums = function () {
-  var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-  return randomNum;
-};
-console.log(randomNums());
+//characters------------------------
+var charPrompt = window.confirm(
+  'Do you want to include special characters in your password?'
+);
+
+var charList = '!#$%&()*+-/:;<=>?@[]^_{|}~';
+//this holds strings of characters selected
+var randomCharString = '';
+// Generate random characters and append them to the password string
+for (var i = 0; i < lengthPass; i++) {
+  var randomChar = charList[Math.floor(Math.random() * charList.length)];
+  randomCharString += randomChar;
+}
+
+console.log(`Random Characters string:`, randomCharString);
+
+//NOTEBelow are my variables as functions
+// //SECTION Random Numbers
+// var randomNums = function () {
+//   var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+//   var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+//   return randomNum;
+// };
+// console.log(randomNums());
 
 //SECTION Random Characters
-var randomChars = function () {
-  var charList = '!#$%&()*+,-./:;<=>?@[]^_`{|}~';
-  var randomChar = charList[Math.floor(Math.random() * charList.length)];
-  return randomChar;
-};
-console.log(randomChars());
+// var randomChars = function () {
+//   var charList = '!#$%&()*+,-./:;<=>?@[]^_`{|}~';
+//   var randomChar = charList[Math.floor(Math.random() * charList.length)];
+//   return randomChar;
+// };
+// console.log(randomChars());
 //SECTION Random ALPHAbet-alpha is function and others are variables just to test
 var randomString = function () {
   var alphabet = 'abcdefghijklmnipqrstuvwxyz';
@@ -55,24 +72,29 @@ console.log(randomString());
 //IMPORTANT ORIGINAL CODE ------------------
 // // the writePassword() function generates a password using the generatePassword() function, selects the HTML element with the ID password, and updates its value with the generated password.
 var generatePassword = function () {
+  if (numberPrompt == true) {
+    console.log(`${randomNums} are the numbers in password`);
+  } else {
+    console.log('no numbers');
+  }
   // var lengthPass = window.prompt(
   //   'How long should your password be? Must be at least 8 but no more than 128 characters long'
   // );
   // console.log(`this is the length ${lengthPass}`);
-  var numberPrompt = window.confirm(
-    'Do you want to include numbers in your password?'
-  );
-  if (numberPrompt == true) {
-    var randomNums = function () {
-      var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-      return randomNum;
-    };
-    randomNums();
-    console.log('yes to numbers');
-  } else {
-    console.log('no numbers');
-  }
+  // var numberPrompt = window.confirm(
+  //   'Do you want to include numbers in your password?'
+  // );
+  // if (numberPrompt == true) {
+  //   var randomNums = function () {
+  //     var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  //     var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+  //     return randomNum;
+  //   };
+  //   randomNums();
+  //   console.log('yes to numbers');
+  // } else {
+  //   console.log('no numbers');
+  // }
 };
 generatePassword();
 
@@ -105,20 +127,20 @@ generateBtn.addEventListener('click', function () {
   //  return lengthPass;
   // }
   //SECTION-------number---------------------------------
-  var numberPrompt = window.confirm(
-    'Do you want to include numbers in your password?'
-  );
-  if (numberPrompt == true) {
-    var randomNums = function () {
-      var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-      return randomNum;
-    };
-    console.log(randomNums(lengthPass));
-    console.log('yes to numbers');
-  } else {
-    console.log('no numbers');
-  }
+  // var numberPrompt = window.confirm(
+  //   'Do you want to include numbers in your password?'
+  // );
+  // if (numberPrompt == true) {
+  //   var randomNums = function () {
+  //     var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  //     var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+  //     return randomNum;
+  //   };
+  //   console.log(randomNums(lengthPass));
+  //   console.log('yes to numbers');
+  // } else {
+  //   console.log('no numbers');
+  // }
   //SECTION-------characters---------------------------------
   var charPrompt = window.confirm(
     'Do you want to include special characters in your password?'
