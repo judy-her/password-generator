@@ -5,14 +5,16 @@ console.log('I am linked');
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-
-//SECTION Random ALPHAbet-alpha is function and others are variables just to test
-var randomString = function () {
-  var alphabet = 'abcdefghijklmnipqrstuvwxyz';
-  var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
-  return randomAlphabet;
-};
-console.log(randomString());
+//SECTION Make sure password length is correct
+var lengthPass = window.prompt(
+  'How long should your password be? Must be at least 8 but no more than 128 characters long'
+);
+//make sure is a number and correct length//
+if (isNaN(lengthPass) || lengthPass < 8 || lengthPass > 128) {
+  alert('Please enter a numbert between 8 and 128');
+} else {
+  console.log(`This is the length: ${lengthPass}`);
+}
 
 //SECTION Random Numbers
 var randomNums = function () {
@@ -29,14 +31,21 @@ var randomChars = function () {
   return randomChar;
 };
 console.log(randomChars());
+//SECTION Random ALPHAbet-alpha is function and others are variables just to test
+var randomString = function () {
+  var alphabet = 'abcdefghijklmnipqrstuvwxyz';
+  var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
+  return randomAlphabet;
+};
+console.log(randomString());
 
 //IMPORTANT ORIGINAL CODE ------------------
 // // the writePassword() function generates a password using the generatePassword() function, selects the HTML element with the ID password, and updates its value with the generated password.
-var generatePassword = function (length) {
-  var lengthPass = window.prompt(
-    'How long should your password be? Must be at least 8 but no more than 128 characters long'
-  );
-  console.log(`this is the length ${lengthPass}`);
+var generatePassword = function () {
+  // var lengthPass = window.prompt(
+  //   'How long should your password be? Must be at least 8 but no more than 128 characters long'
+  // );
+  // console.log(`this is the length ${lengthPass}`);
   var numberPrompt = window.confirm(
     'Do you want to include numbers in your password?'
   );

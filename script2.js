@@ -2,6 +2,7 @@ console.log('script 2 is linked');
 var lengthPass = window.prompt(
   'How long should your password be? Must be at least 8 but no more than 128 characters long'
 );
+
 //make sure is a number and correct length//
 if (isNaN(lengthPass) || lengthPass < 8 || lengthPass > 128) {
   alert('Please enter a numbert between 8 and 128');
