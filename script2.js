@@ -41,6 +41,20 @@ for (var i = 0; i < lengthPass; i++) {
 
 console.log(`Random Characters string:`, randomCharString);
 
+//letters--------------------------------
+var alphaPrompt = window.confirm(
+  'Do you want to include letters in your password?'
+);
+var alphabet = 'abcdefghijklmnipqrstuvwxyz';
+var randomAlphaString = '';
+
+for (i = 0; i < lengthPass; i++) {
+  var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
+  randomAlphaString += randomAlphabet;
+}
+console.log(`Random Alphabet string:`, randomAlphaString);
+
+//generatePASSWORD function
 var generatePassword = function () {
   if (numberPrompt == true) {
     console.log(`These are the final random numbers${randomNums} `);

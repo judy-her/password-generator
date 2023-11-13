@@ -44,6 +44,18 @@ for (var i = 0; i < lengthPass; i++) {
 }
 
 console.log(`Random Characters string:`, randomCharString);
+//letters--------------------------------
+var alphaPrompt = window.confirm(
+  'Do you want to include letters in your password?'
+);
+var alphabet = 'abcdefghijklmnipqrstuvwxyz';
+var randomAlphaString = '';
+
+for (i = 0; i < lengthPass; i++) {
+  var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
+  randomAlphaString += randomAlphabet;
+}
+console.log(`Random Alphabet string:`, randomAlphaString);
 
 //NOTEBelow are my variables as functions
 // //SECTION Random Numbers
@@ -67,15 +79,20 @@ var randomString = function () {
   var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
   return randomAlphabet;
 };
-console.log(randomString());
+// console.log(randomString());
 
 //IMPORTANT ORIGINAL CODE ------------------
 // // the writePassword() function generates a password using the generatePassword() function, selects the HTML element with the ID password, and updates its value with the generated password.
 var generatePassword = function () {
   if (numberPrompt == true) {
-    console.log(`${randomNums} are the numbers in password`);
+    console.log(`These are the final random numbers${randomNums} `);
   } else {
     console.log('no numbers');
+  }
+  if (charPrompt == true) {
+    console.log(`These are the final random characters ${randomCharString}`);
+  } else {
+    console.log('no characters');
   }
   // var lengthPass = window.prompt(
   //   'How long should your password be? Must be at least 8 but no more than 128 characters long'
@@ -142,14 +159,14 @@ generateBtn.addEventListener('click', function () {
   //   console.log('no numbers');
   // }
   //SECTION-------characters---------------------------------
-  var charPrompt = window.confirm(
-    'Do you want to include special characters in your password?'
-  );
-  if (charPrompt == true) {
-    console.log('yes to characters');
-  } else {
-    console.log('no characters');
-  }
+  // var charPrompt = window.confirm(
+  //   'Do you want to include special characters in your password?'
+  // );
+  // if (charPrompt == true) {
+  //   console.log('yes to characters');
+  // } else {
+  //   console.log('no characters');
+  // }
 
   //SECTION-------alphabet---------------------------------
   var alphaPrompt = window.confirm(
