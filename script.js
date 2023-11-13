@@ -62,19 +62,25 @@ generateBtn.addEventListener('click', function () {
     'Do you want to include numbers in your password?'
   );
   if (numberPrompt == true) {
-    console.log('yes to numbser');
+    console.log('yes to numbers');
+  } else {
+    console.log('no numbers');
   }
   var charPrompt = window.confirm(
     'Do you want to include special characters in your password?'
   );
   if (charPrompt == true) {
     console.log('yes to characters');
+  } else {
+    console.log('no characters');
   }
   var alphaPrompt = window.confirm(
     'Do you want to include letters in your password?'
   );
   if (alphaPrompt == true) {
     console.log('yes to alphabet');
+  } else {
+    console.log('dont include letters');
   }
 });
 
