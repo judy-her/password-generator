@@ -74,11 +74,25 @@ generateBtn.addEventListener('click', function () {
   } else {
     console.log('no characters');
   }
+
+  //SECTION-------alphabet---------------------------------
   var alphaPrompt = window.confirm(
     'Do you want to include letters in your password?'
   );
   if (alphaPrompt == true) {
     console.log('yes to alphabet');
+    var upperCase = window.confirm('include upper case?');
+    if (upperCase == true) {
+      console.log('yes uppercase');
+    } else {
+      console.log('no uppercase');
+    }
+    var lowerCase = window.confirm('include lower case?');
+    if (lowerCase == true) {
+      console.log('yes lower case');
+    } else {
+      console.log('no lower case');
+    }
   } else {
     console.log('dont include letters');
   }
