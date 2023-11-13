@@ -32,40 +32,72 @@ console.log(randomChars());
 
 //IMPORTANT ORIGINAL CODE ------------------
 // // the writePassword() function generates a password using the generatePassword() function, selects the HTML element with the ID password, and updates its value with the generated password.
-// function writePassword() {
-//   // var password will store random password created by generatePassword
-//   var password = generatePassword();
+var generatePassword = function (length) {
+  var lengthPass = window.prompt(
+    'How long should your password be? Must be at least 8 but no more than 128 characters long'
+  );
+  console.log(`this is the length ${lengthPass}`);
+  var numberPrompt = window.confirm(
+    'Do you want to include numbers in your password?'
+  );
+  if (numberPrompt == true) {
+    var randomNums = function () {
+      var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+      return randomNum;
+    };
+    randomNums();
+    console.log('yes to numbers');
+  } else {
+    console.log('no numbers');
+  }
+};
+generatePassword();
+
+function writePassword() {
+  // var password will store random password created by generatePassword
+  var password = generatePassword();
+
+  return password;
+}
+
 //   var passwordText = document.querySelector('#password');
 //   passwordText.value = password;
 // }
 // writePassword();
 // console.log(writePassword);
+
 //IMPORTANT ORIGINAL CODE ------
 // Add event listener to generate button
 // generateBtn.addEventListener('click', writePassword);
 //replace function() with writePassword function
 generateBtn.addEventListener('click', function () {
-  var start = window.confirm('Do you want a new Password?');
+  // var start = window.confirm('Do you want a new Password?');
 
-  if (start == true) {
-    var lengthPass = window.prompt(
-      'How long should your password be? Must be at least 8 but no more than 128 characters long'
-    );
-    console.log(`this is the length ${lengthPass}`);
-    //  return lengthPass;
-    //-create a separate list for lc, up, numbers and special characters
-    //-letters, if true, ask upper or lower, else skip
-    //-numbers? true/false
-    //-special charcters? true/false
-  }
+  // if (start == true) {
+  //   var lengthPass = window.prompt(
+  //     'How long should your password be? Must be at least 8 but no more than 128 characters long'
+  //   );
+  //   console.log(`this is the length ${lengthPass}`);
+
+  //  return lengthPass;
+  // }
+  //SECTION-------number---------------------------------
   var numberPrompt = window.confirm(
     'Do you want to include numbers in your password?'
   );
   if (numberPrompt == true) {
+    var randomNums = function () {
+      var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+      return randomNum;
+    };
+    console.log(randomNums(lengthPass));
     console.log('yes to numbers');
   } else {
     console.log('no numbers');
   }
+  //SECTION-------characters---------------------------------
   var charPrompt = window.confirm(
     'Do you want to include special characters in your password?'
   );
