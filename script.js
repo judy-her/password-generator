@@ -15,6 +15,13 @@ if (isNaN(lengthPass) || lengthPass < 8 || lengthPass > 128) {
 } else {
   console.log(`This is the length: ${lengthPass}`);
 }
+var numberPrompt = window.confirm(
+  'Do you want to include numbers in your password?'
+);
+
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+//Add empty array to store random numbers
+var randomNums = []; //this holds array of numbers selected
 
 //SECTION Random Numbers
 var randomNums = function () {
