@@ -33,7 +33,6 @@ console.log(`Random numbers array`, randomNums);
 var charPrompt = window.confirm(
   'Do you want to include special characters in your password?'
 );
-
 var charList = '!#$%&()*+-/:;<=>?@[]^_{|}~';
 //this holds strings of characters selected
 var randomCharString = '';
@@ -74,15 +73,27 @@ console.log(`Random Alphabet string:`, randomAlphaString);
 // };
 // console.log(randomChars());
 //SECTION Random ALPHAbet-alpha is function and others are variables just to test
-var randomString = function () {
-  var alphabet = 'abcdefghijklmnipqrstuvwxyz';
-  var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
-  return randomAlphabet;
-};
+// var randomString = function () {
+//   var alphabet = 'abcdefghijklmnipqrstuvwxyz';
+//   var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
+//   return randomAlphabet;
+// };
 // console.log(randomString());
 
 //IMPORTANT ORIGINAL CODE ------------------
 // // the writePassword() function generates a password using the generatePassword() function, selects the HTML element with the ID password, and updates its value with the generated password.
+// var alphaPrompt = window.confirm(
+//   'Do you want to include letters in your password?'
+// );
+// var alphabet = 'abcdefghijklmnipqrstuvwxyz';
+// var randomAlphaString = '';
+
+// for (i = 0; i < lengthPass; i++) {
+//   var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
+//   randomAlphaString += randomAlphabet;
+// }
+// console.log(`Random Alphabet string:`, randomAlphaString);
+
 var generatePassword = function () {
   if (numberPrompt == true) {
     console.log(`These are the final random numbers${randomNums} `);
@@ -94,6 +105,20 @@ var generatePassword = function () {
   } else {
     console.log('no characters');
   }
+  if (alphaPrompt == true) {
+    console.log(`These are the final random characters ${randomAlphaString}`);
+  } else {
+    console.log('no letters');
+  }
+  //   var upperCase = window.confirm('include upper case?');
+  //   if (upperCase == true) {
+  //     console.log('yes uppercase');
+  //   } else {
+  //     console.log('no uppercase');
+  //   }
+  // } else {
+  //   console.log('dont include letters');
+  // }
   // var lengthPass = window.prompt(
   //   'How long should your password be? Must be at least 8 but no more than 128 characters long'
   // );
@@ -169,27 +194,21 @@ generateBtn.addEventListener('click', function () {
   // }
 
   //SECTION-------alphabet---------------------------------
-  var alphaPrompt = window.confirm(
-    'Do you want to include letters in your password?'
-  );
-  if (alphaPrompt == true) {
-    console.log('yes to alphabet');
-    var upperCase = window.confirm('include upper case?');
-    if (upperCase == true) {
-      console.log('yes uppercase');
-    } else {
-      console.log('no uppercase');
-    }
-    var lowerCase = window.confirm('include lower case?');
-    if (lowerCase == true) {
-      console.log('yes lower case');
-    } else {
-      console.log('no lower case');
-    }
-  } else {
-    console.log('dont include letters');
-  }
-});
+//   var alphaPrompt = window.confirm(
+//     'Do you want to include letters in your password?'
+//   );
+//   if (alphaPrompt == true) {
+//     console.log('yes to alphabet');
+//     var upperCase = window.confirm('include upper case?');
+//     if (upperCase == true) {
+//       console.log('yes uppercase');
+//     } else {
+//       console.log('no uppercase');
+//     }
+//   } else {
+//     console.log('dont include letters');
+//   }
+// });
 
 //NOTE MY original function, keep for reference
 // document.querySelector('#generate').addEventListener('click', function () {

@@ -66,6 +66,11 @@ var generatePassword = function () {
   } else {
     console.log('no characters');
   }
+  if (alphaPrompt == true) {
+    console.log(`These are the final random characters ${randomAlphaString}`);
+  } else {
+    console.log('no letters');
+  }
 };
 
 generatePassword();
