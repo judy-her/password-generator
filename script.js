@@ -122,12 +122,14 @@ var generatePassword = function () {
   if (alphaPrompt !== true) {
     console.log('no letters');
   }
-
+  //join all arrays into one string
   var joinedArray = emptyPassArray.join('');
-  var joinedArray2 = joinedArray.sort;
-
   console.log(`Generated Password = ${joinedArray}`);
-  console.log(`This is concat ${joinedArray2}`);
+  console.log(typeof randomNums, typeof emptyPassArray, typeof joinedArray);
+  //make string into an array
+  var myArray = joinedArray.split();
+  console.log(`this is the password array:`, myArray);
+  console.log(typeof myArray);
 };
 generatePassword();
 

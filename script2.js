@@ -5,7 +5,7 @@ var lengthPass = window.prompt(
 
 //make sure is a number and correct length//
 if (isNaN(lengthPass) || lengthPass < 8 || lengthPass > 128) {
-  alert('Please enter a numbert between 8 and 128');
+  prompt('Please enter a numbert between 8 and 128');
 } else {
   console.log(`This is the length: ${lengthPass}`);
 }
@@ -92,9 +92,15 @@ var generatePassword = function () {
   if (alphaPrompt !== true) {
     console.log('no letters');
   }
-
+  //join all arrays into one string
   var joinedArray = emptyPassArray.join('');
   console.log(`Generated Password = ${joinedArray}`);
+  console.log(typeof randomNums, typeof emptyPassArray, typeof joinedArray);
+  //make string into an array
+  var myArray = joinedArray.split();
+  console.log(myArray);
+  console.log(typeof myArray);
+  //
 };
 
 generatePassword();
