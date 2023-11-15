@@ -54,23 +54,47 @@ for (i = 0; i < lengthPass; i++) {
 }
 console.log(`Random Alphabet string:`, randomAlphaString);
 
+//UPPERcase letters------------------------
+var alphaUpperPrompt = window.confirm(
+  'Do you want to include upper case letters in your password?'
+);
+var upperCaseAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var randomUpperCaseString = '';
+
+for (i = 0; i < lengthPass; i++) {
+  var randomUpper =
+    upperCaseAlphabet[Math.floor(Math.random() * upperCaseAlphabet.length)];
+  randomUpperCaseString += randomUpper;
+}
+console.log(`Random UPPER case Alphabet string:`, randomUpperCaseString);
+
 //generatePASSWORD function
 var generatePassword = function () {
+  var emptyPassArray = [];
+
   if (numberPrompt == true) {
-    console.log(`These are the final random numbers${randomNums} `);
+    emptyPassArray.push(randomNums);
   } else {
     console.log('no numbers');
   }
   if (charPrompt == true) {
-    console.log(`These are the final random characters ${randomCharString}`);
+    emptyPassArray.push(randomCharString);
   } else {
     console.log('no characters');
   }
-  if (alphaPrompt == true) {
-    console.log(`These are the final random characters ${randomAlphaString}`);
-  } else {
+
+  if (alphaPrompt === true) {
+    emptyPassArray.push(randomAlphaString);
+  }
+  if (alphaPrompt === true && alphaUpperPrompt === true) {
+    emptyPassArray.push(randomUpperCaseString);
+  }
+  if (alphaPrompt !== true) {
     console.log('no letters');
   }
+
+  var joinedArray = emptyPassArray.join('');
+  console.log(`Generated Password = ${joinedArray}`);
 };
 
 generatePassword();
@@ -82,4 +106,4 @@ generatePassword();
 //   var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
 //   randomNums.push(randomNum);
 // }
-// console.log(`Random numbers array`, randomNums.join(''));
+// console.log(`Random numbers array`, randomNums.join(''))

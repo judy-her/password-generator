@@ -21,7 +21,8 @@ var numberPrompt = window.confirm(
 //SECTION-------number---------------------------------
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 //Add empty array to store random numbers
-var randomNums = []; //this holds array of numbers selected
+var randomNums = [];
+//this holds array of numbers selected
 //genrerate random numbers and push into array
 for (var i = 0; i < lengthPass; i++) {
   var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
@@ -96,8 +97,6 @@ console.log(`Random UPPER case Alphabet string:`, randomUpperCaseString);
 //IMPORTANT ORIGINAL CODE ------------------
 // // the writePassword() function generates a password using the generatePassword() function, selects the HTML element with the ID password, and updates its value with the generated password.
 
-var emptyPassArray = [];
-
 var generatePassword = function () {
   var emptyPassArray = [];
 
@@ -113,20 +112,22 @@ var generatePassword = function () {
   } else {
     console.log('no characters');
   }
-  if (alphaPrompt != true) {
-    console.log('no letters');
-    // console.log(`These are the final random letters ${randomAlphaString}`);
-  } else if (alphaPrompt == true) {
+
+  if (alphaPrompt === true) {
     emptyPassArray.push(randomAlphaString);
-  } else if (alphaUpperPrompt == true) {
-    emptyPassArray.push(randomUpperCaseString);
-    // console.log(
-    //   `These are the final Upper case letters ${randomUpperCaseString}`
-    // );
   }
+  if (alphaPrompt === true && alphaUpperPrompt === true) {
+    emptyPassArray.push(randomUpperCaseString);
+  }
+  if (alphaPrompt !== true) {
+    console.log('no letters');
+  }
+
   var joinedArray = emptyPassArray.join('');
+  var joinedArray2 = joinedArray.sort;
 
   console.log(`Generated Password = ${joinedArray}`);
+  console.log(`This is concat ${joinedArray2}`);
 };
 generatePassword();
 
