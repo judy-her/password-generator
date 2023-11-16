@@ -149,6 +149,19 @@ var generatePassword = function () {
     // return myArray;
   }
   console.log('this is shuffled array', myArray);
+  //UCB Xpert Learning Assistant helped here
+  // check if myArray length is equal to lengthPass
+  if (myArray.length < lengthPass) {
+    // add additional elements to myArray until it reaches the desired length
+    var additionalElements = lengthPass - myArray.length;
+    for (var i = 0; i < additionalElements; i++) {
+      myArray.push(undefined);
+    }
+  } else if (myArray.length > lengthPass) {
+    // remove extra elements from myArray until it reaches the desired length
+    myArray = myArray.slice(0, lengthPass);
+  }
+  console.log(myArray);
 };
 generatePassword();
 
