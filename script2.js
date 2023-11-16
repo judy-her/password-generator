@@ -9,7 +9,7 @@ if (isNaN(lengthPass) || lengthPass < 8 || lengthPass > 128) {
 } else {
   console.log(`This is the length: ${lengthPass}`);
 }
-
+//------numbers----------------------
 var numberPrompt = window.confirm(
   'Do you want to include numbers in your password?'
 );
@@ -67,13 +67,13 @@ for (i = 0; i < lengthPass; i++) {
   randomUpperCaseString += randomUpper;
 }
 console.log(`Random UPPER case Alphabet string:`, randomUpperCaseString);
-
-//generatePASSWORD function
+//generatePASSWORD function---------------------
 var generatePassword = function () {
   var emptyPassArray = [];
 
+  //   console.log(`Random numbers array`, randomNums.join(''));
   if (numberPrompt == true) {
-    emptyPassArray.push(randomNums);
+    emptyPassArray.push(randomNums.join(''));
   } else {
     console.log('no numbers');
   }
@@ -97,19 +97,23 @@ var generatePassword = function () {
   console.log(`Generated Password = ${joinedArray}`);
   console.log(typeof randomNums, typeof emptyPassArray, typeof joinedArray);
   //make string into an array
-  var myArray = joinedArray.split();
+  var myArray = joinedArray.split('');
   console.log(myArray);
   console.log(typeof myArray);
-  //
+
+  //shufle my array
+
+  myArray;
+  //Fisher-yates(knuth) shuffle algorithm found at nobledesktop.com
+
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
 };
-
 generatePassword();
-
-//genrerate random numbers and push into string
-
-//geerate random numbers and push intoarray
-// for (var i = 0; i < lengthPass; i++) {
-//   var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-//   randomNums.push(randomNum);
-// }
-// console.log(`Random numbers array`, randomNums.join(''))

@@ -11,14 +11,15 @@ var lengthPass = window.prompt(
 );
 //make sure is a number and correct length//
 if (isNaN(lengthPass) || lengthPass < 8 || lengthPass > 128) {
-  alert('Please enter a numbert between 8 and 128');
+  prompt('Please enter a numbert between 8 and 128');
 } else {
   console.log(`This is the length: ${lengthPass}`);
 }
+
+//SECTION-------number---------------------------------
 var numberPrompt = window.confirm(
   'Do you want to include numbers in your password?'
 );
-//SECTION-------number---------------------------------
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 //Add empty array to store random numbers
 var randomNums = [];
@@ -28,7 +29,7 @@ for (var i = 0; i < lengthPass; i++) {
   var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
   randomNums.push(randomNum);
 }
-console.log(`Random numbers array`, randomNums);
+console.log(`Random numbers array`, randomNums.join(''));
 
 //characters------------------------
 var charPrompt = window.confirm(
@@ -101,7 +102,7 @@ var generatePassword = function () {
   var emptyPassArray = [];
 
   if (numberPrompt == true) {
-    emptyPassArray.push(randomNums);
+    emptyPassArray.push(randomNums.join(''));
     // console.log(`These are the final random numbers${randomNums} `);
   } else {
     console.log('no numbers');
