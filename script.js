@@ -145,5 +145,3 @@ var generatePassword = function () {
   }
   writePassword();
 };
-
-generatePassword();
