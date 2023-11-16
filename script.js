@@ -120,7 +120,7 @@ var generatePassword = function () {
     myArray[r] = temp;
     // return myArray;
   }
-  // UCB helped here -join the elements of myArray into a string
+
   myArray = myArray.join('');
 
   //UCB Xpert Learning Assistant helped here
