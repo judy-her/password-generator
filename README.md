@@ -12,7 +12,7 @@ N/A
 
 ## Usage
 
-To get started click on the "Generate Password" button. From here you will be asked how long your password to be. Type the number you want. After you will be asked whether you want numbers, special characters, or letters in your password. Once all prompts are answered, the new password will appear in the box. Here is the link for full access
+To get started click on the "Generate Password" button. From here you will be asked how long your password to be. Type the number you want. After you will be asked whether you want numbers, special characters, or letters in your password. Once all prompts are answered, the new password will appear in the box. Here is the link for full access https://judy-her.github.io/password-generator/
 
 ![Screenshot of Password Generator](assets/images/screenshot-password-generator.png)
 

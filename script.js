@@ -1,13 +1,12 @@
 console.log('script 2 is linked');
 var generateBtn = document.querySelector('#generate');
-//Add event listener to generate button
-generateBtn.addEventListener('click', generatePassword);
+
 generateBtn.addEventListener('click', function () {
-  alert('Welcome to your new password');
   generatePassword();
 });
 //generatePASSWORD function---------------------
 var generatePassword = function () {
+  alert('Welcome to your new password');
   var emptyPassArray = [];
   var lengthPass = window.prompt(
     'How long should your password be? Must be at least 8 but no more than 128 characters long'
