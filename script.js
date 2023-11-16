@@ -128,9 +128,27 @@ var generatePassword = function () {
   console.log(`Generated Password = ${joinedArray}`);
   console.log(typeof randomNums, typeof emptyPassArray, typeof joinedArray);
   //make string into an array
-  var myArray = joinedArray.split();
+  var myArray = joinedArray.split('');
   console.log(`this is the password array:`, myArray);
-  console.log(typeof myArray);
+
+  //shufle my array
+  myArray;
+  //Fisher-Yates shuffle algorithm found at nobledesktop.com
+  //----------------------------------------------------
+  // 1-set up a loop that iterates the array
+  for (let i = 0; i < myArray.length; i++) {
+    //2-save the current item to to a temp variable
+    let temp = myArray[i];
+    //3-generate a random number in the range of the array
+    let r = Math.floor(Math.random() * myArray.length);
+    //4-get the item at the random index and ..
+    //5-raplace the current item with the random item
+    myArray[i] = myArray[r];
+    //6-replace the random item with the current item as temp
+    myArray[r] = temp;
+    // return myArray;
+  }
+  console.log('this is shuffled array', myArray);
 };
 generatePassword();
 

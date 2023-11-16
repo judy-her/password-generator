@@ -104,16 +104,33 @@ var generatePassword = function () {
   //shufle my array
 
   myArray;
-  //Fisher-yates(knuth) shuffle algorithm found at nobledesktop.com
-
-  function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
+  //Fisher-Yates shuffle algorithm found at nobledesktop.com
+  //----------------------------------------------------
+  // 1-set up a loop that iterates the array
+  for (let i = 0; i < myArray.length; i++) {
+    //2-save the current item to to a temp variable
+    let temp = myArray[i];
+    //3-generate a random number in the range of the array
+    let r = Math.floor(Math.random() * myArray.length);
+    //4-get the item at the random index and ..
+    //5-raplace the current item with the random item
+    myArray[i] = myArray[r];
+    //6-replace the random item with the current item as temp
+    myArray[r] = temp;
+    // return myArray;
   }
+  //UCB Xpert Learning Assistant helped here
+  // check if myArray length is equal to lengthPass
+  if (myArray.length < lengthPass) {
+    // add additional elements to myArray until it reaches the desired length
+    var additionalElements = lengthPass - myArray.length;
+    for (var i = 0; i < additionalElements; i++) {
+      myArray.push(undefined);
+    }
+  } else if (myArray.length > lengthPass) {
+    // remove extra elements from myArray until it reaches the desired length
+    myArray = myArray.slice(0, lengthPass);
+  }
+  console.log(myArray);
 };
 generatePassword();
