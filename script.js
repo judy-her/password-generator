@@ -148,7 +148,9 @@ var generatePassword = function () {
     myArray[r] = temp;
     // return myArray;
   }
-  console.log('this is shuffled array', myArray);
+
+  // join the elements of myArray into a string
+  myArray = myArray.join('');
   //UCB Xpert Learning Assistant helped here
   // check if myArray length is equal to lengthPass
   if (myArray.length < lengthPass) {
